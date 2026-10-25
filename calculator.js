@@ -4,5 +4,8 @@ export function calculateCosts(costs) {
     return sum + amount;
   }, 0);
 
-  return { total: total };
+  return { 
+    total: total, 
+    count: Object.values(costs).length
+  };
 }
