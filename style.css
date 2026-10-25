@@ -1,0 +1,211 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: #f3f5f7;
+  color: #17202a;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 8px;
+}
+
+.description {
+  color: #5c6670;
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+/* Дві колонки: поля зліва, результат справа */
+.calculator-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 24px;
+}
+
+form,
+.result {
+  min-width: 0;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 0;
+  box-shadow: 0 4px 16px rgba(23, 32, 42, 0.05);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 0;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin-top: 8px;
+  padding: 11px;
+  border: 1px solid #cbd2d9;
+  border-radius: 7px;
+  background: white;
+  color: #17202a;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #1769aa;
+  outline-offset: 1px;
+}
+
+.result {
+  position: sticky;
+  top: 24px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.result-row span:first-child {
+  color: #5c6670;
+}
+
+.result-row strong,
+.result-row span:last-child {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.total {
+  font-size: 22px;
+  font-weight: bold;
+  padding-top: 18px;
+  border-bottom: 0;
+}
+
+.total span:first-child {
+  color: #17202a;
+}
+
+.total span:last-child {
+  color: #1769aa;
+}
+
+.note {
+  margin-bottom: 0;
+  font-size: 13px;
+  color: #66717c;
+  line-height: 1.5;
+}
+
+/* Планшети та телефони */
+@media (max-width: 760px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .calculator-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+  }
+
+  form,
+  .result {
+    padding: 18px;
+  }
+
+  .result {
+    position: static;
+  }
+}
+
+
+.total-card {
+  padding: 20px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  background: #eaf3fc;
+}
+
+.total-card p {
+  margin: 0 0 8px;
+  color: #425466;
+  font-size: 14px;
+}
+
+.total-card strong {
+  display: block;
+  color: #145a96;
+  font-size: clamp(26px, 3vw, 36px);
+  overflow-wrap: anywhere;
+}
+
+.cost-category {
+  margin-top: 22px;
+}
+
+.cost-category h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.category-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.category-total strong {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .total-card {
+    padding: 16px;
+  }
+
+  .cost-category {
+    margin-top: 18px;
+  }
+}
